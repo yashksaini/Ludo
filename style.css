@@ -1,0 +1,624 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Rubik", sans-serif;
+}
+
+.cover {
+  z-index: 500;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #bebeff;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cover .start {
+  width: 250px;
+  height: 250px;
+  background-color: #7ce22b;
+  color: white;
+  border-style: none;
+  border-radius: 500px;
+  font-size: 70px;
+}
+.cover .start h1 {
+  font-size: 40px;
+}
+.cover .start:hover {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+#cover1 {
+  position: fixed;
+  opacity: 0.9;
+  text-align: center;
+}
+#cover1 .start {
+  margin-top: 100px;
+}
+#cover1 .start:hover {
+  margin-top: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.ground {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  display: flex;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  border: solid 1px #aaaaaa;
+  border-radius: 0px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 100px;
+  border: solid white 1px;
+  box-shadow: 2px 2px 3px grey;
+  z-index: 5;
+}
+.button .dot:hover {
+  cursor: pointer;
+}
+
+.line1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: white;
+}
+.line1 div {
+  padding: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_text {
+  position: fixed;
+  bottom: 5px;
+  text-align: center;
+}
+
+.board {
+  width: 450px;
+  height: 450px;
+}
+.board .row1 {
+  width: 450px;
+  height: 180px;
+  display: flex;
+}
+.board .row1 .col1-1 {
+  width: 180px;
+  height: 180px;
+  background-color: #fd3333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board .row1 .col1-2 {
+  width: 90px;
+  height: 180px;
+}
+.board .row1 .col1-3 {
+  width: 180px;
+  height: 180px;
+  background-color: #7ce22b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board .row2 {
+  width: 450px;
+  height: 90px;
+  display: flex;
+}
+.board .row2 .col2-1 {
+  width: 180px;
+  height: 90px;
+}
+.board .row2 .col2-2 {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board .row2 .col2-3 {
+  width: 180px;
+  height: 90px;
+}
+.board .row3 {
+  width: 450px;
+  height: 180px;
+  display: flex;
+}
+.board .row3 .col3-1 {
+  width: 180px;
+  height: 180px;
+  background-color: #276af9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board .row3 .col3-2 {
+  width: 90px;
+  height: 180px;
+}
+.board .row3 .col3-3 {
+  width: 180px;
+  height: 180px;
+  background-color: #ffed05;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#center {
+  background-color: #fff;
+  background-image: url("Images/center.png");
+  background-size: fit;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.redDot {
+  background-color: #fd3333;
+}
+
+.greenDot {
+  background-color: #7ce22b;
+}
+
+.blueDot {
+  background-color: #276af9;
+}
+
+.yellowDot {
+  background-color: #ffed05;
+}
+
+.star {
+  background-color: #fff;
+  background-image: url("Images/star.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  min-width: 100px;
+  width: auto;
+  min-height: 100px;
+  height: auto;
+  background-color: #f8f8f8;
+  border-style: none;
+  box-shadow: 1px 1px 10px grey;
+  text-align: center;
+  padding: 10px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 3;
+  top: 100%;
+  left: 100%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.rollDie {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rollDie .roll_btn {
+  width: 60px;
+  height: 60px;
+  background-color: #fefefe;
+  border-radius: 100px;
+  border: solid 1px grey;
+  margin: 10px;
+  font-size: 30px;
+  color: black;
+  color: white;
+}
+.rollDie .roll_btn:hover {
+  cursor: pointer;
+}
+.rollDie .fbtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 0px;
+  background-color: white;
+  border: solid 1px grey;
+}
+.fbtn button{
+  width: 18px;
+  height: 18px;
+}
+
+#blue_dice {
+  color: #276af9;
+}
+
+#green_dice {
+  color: #7ce22b;
+}
+
+#red_dice {
+  color: #fd3333;
+}
+
+#yellow_dice {
+  color: #f0e122;
+}
+
+#dice_value {
+  font-size: 70px;
+  color: grey;
+  border-radius: 15px;
+  margin: 0px;
+}
+
+.rotate1 {
+  transform: rotate(-180deg) scale(0.8);
+  transition: all 0.5s;
+}
+
+.rotate {
+  transform: rotate(180deg) scale(1.2);
+  transition: all 0.5s;
+}
+
+#current {
+  text-align: center;
+}
+
+/********************---------------------------------------------**********************/
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Rubik", sans-serif;
+  }
+
+  .cover {
+    z-index: 500;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #bebeff;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cover .start {
+    width: 250px;
+    height: 250px;
+    background-color: #7ce22b;
+    color: white;
+    border-style: none;
+    border-radius: 500px;
+    font-size: 70px;
+  }
+  .cover .start h1 {
+    font-size: 40px;
+  }
+  .cover .start:hover {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .ground {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .line {
+    display: flex;
+  }
+
+  .button {
+    width: 21px;
+    height: 21px;
+    padding: 0px;
+    border: solid 1px #aaaaaa;
+    border-radius: 0px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    border: solid white 1px;
+    box-shadow: 2px 2px 3px grey;
+    z-index: 5;
+  }
+  .button .dot:hover {
+    cursor: pointer;
+  }
+
+  .line1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color: white;
+  }
+  .line1 div {
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer_text {
+    position: fixed;
+    bottom: 5px;
+    text-align: center;
+  }
+
+  .board {
+    width: 315px;
+    height: 315px;
+  }
+  .board .row1 {
+    width: 315px;
+    height: 126px;
+    display: flex;
+  }
+  .board .row1 .col1-1 {
+    width: 126px;
+    height: 126px;
+    background-color: #fd3333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .board .row1 .col1-2 {
+    width: 63px;
+    height: 126px;
+  }
+  .board .row1 .col1-3 {
+    width: 126px;
+    height: 126px;
+    background-color: #7ce22b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .board .row2 {
+    width: 315px;
+    height: 63px;
+    display: flex;
+  }
+  .board .row2 .col2-1 {
+    width: 126px;
+    height: 63px;
+  }
+  .board .row2 .col2-2 {
+    width: 63px;
+    height: 63px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .board .row2 .col2-3 {
+    width: 126px;
+    height: 63px;
+  }
+  .board .row3 {
+    width: 315px;
+    height: 126px;
+    display: flex;
+  }
+  .board .row3 .col3-1 {
+    width: 126px;
+    height: 126px;
+    background-color: #276af9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .board .row3 .col3-2 {
+    width: 63px;
+    height: 126px;
+  }
+  .board .row3 .col3-3 {
+    width: 126px;
+    height: 126px;
+    background-color: #ffed05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #center {
+    background-color: #fff;
+    background-image: url("Images/center.png");
+    background-size: fit;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .redDot {
+    background-color: #fd3333;
+  }
+
+  .greenDot {
+    background-color: #7ce22b;
+  }
+
+  .blueDot {
+    background-color: #276af9;
+  }
+
+  .yellowDot {
+    background-color: #ffed05;
+  }
+
+  .star {
+    background-color: #fff;
+    background-image: url("Images/star.png");
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    padding: 0;
+    margin: 0;
+    border-style: none;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 100px;
+    width: auto;
+    min-height: 100px;
+    height: auto;
+    background-color: #f8f8f8;
+    border-style: none;
+    box-shadow: 1px 1px 10px grey;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 100%;
+    margin-left: -60px;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .rollDie {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rollDie .roll_btn {
+    width: 42px;
+    height: 42px;
+    background-color: #fefefe;
+    border-radius: 100px;
+    border: solid 1px grey;
+    margin: 10px;
+    font-size: 30px;
+    color: black;
+    color: white;
+  }
+  .rollDie .roll_btn:hover {
+    cursor: pointer;
+  }
+  .rollDie .fbtn {
+    width: 21px;
+    height: 21px;
+    border-radius: 0px;
+    background-color: white;
+    border: solid 1px grey;
+  }
+
+  #blue_dice {
+    color: #276af9;
+  }
+
+  #green_dice {
+    color: #7ce22b;
+  }
+
+  #red_dice {
+    color: #fd3333;
+  }
+
+  #yellow_dice {
+    color: #f0e122;
+  }
+
+  #dice_value {
+    font-size: 35px;
+    color: grey;
+    border-radius: 15px;
+    margin: 0px;
+  }
+
+  .rotate1 {
+    transform: rotate(-180deg) scale(0.8);
+    transition: all 0.5s;
+  }
+
+  .rotate {
+    transform: rotate(180deg) scale(1.2);
+    transition: all 0.5s;
+  }
+
+  #current {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
